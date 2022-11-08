@@ -1,0 +1,14 @@
+.card{
+   /* margin-right: 10px; */
+   border: 2px solid rgb(223, 223, 214);
+   border-radius: 10px;
+   
+}   
+.card img{
+    border-radius: 10px;
+}
+.btn-container{
+    align-items: center;
+    margin: 0 20%;
+    
+}
