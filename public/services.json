@@ -1,0 +1,44 @@
+[
+    {
+      "service_id": 1,
+      "title": "Personalized Nutrition Plan",
+      "img": "https://i.ibb.co/T2cpBd5/888.jpg",
+      "fee": 500,
+      "description": "Nutrition plans are created with quality food choices in mind and not just the amount of food a client should eat. The way a client feels is more important in leading them to long term weight loss and results.Precision nutrition, also referred to as personalized nutrition, focuses on the individual rather than groups of people. Many research studies on nutrition and types of diets provide useful information for communities and the general population."
+    },
+    {
+      "service_id": 2,
+      "title": "Personalized Exercise Program",
+      "img": "https://i.ibb.co/ydCbDN3/5555.jpg",
+      "fee": 650,
+      "description": "A personal exercise programme is a strategy that details the physical exercises you should perform in order to reach your goals, and the amount of time you should spend on each exercise. Each programme is tailored specifically to the person's needs and goals. An individually tailored exercise program helps you to target your specific strengths and weaknesses for outstanding results. Working with a personal trainer on your own unique approach to working out and getting fit can revolutionize your health, energy, success, and enthusiasm for exercise"
+    },
+    {
+      "service_id": 3,
+      "title": "Individual Routine Program",
+      "img": "https://i.ibb.co/R6Z2nFM/55.jpg",
+      "fee": 1000,
+      "description": "The best soluton of course is combining diet improvements together with workout plan and regular gym visits. It should take into account your individual particularities."
+    },
+    {
+      "service_id": 4,
+      "title": "Online Class",
+      "img": "https://i.ibb.co/5MvmD2g/88.jpg",
+      "fee": 550,
+      "description": "You share your goals and experience with exercise in the app and a trainer will formulate a plan (often based on exercises in the apps' library of moves). You can then send messages back and forth about how the workouts are, well, working for you, plus how your progress is going.An online trainer should always teach you something new and keep you physically and mentally engaged, Mazzucco says. At the end of the day, the results from working with a trainer online versus in-person can be virtually the same, but you have to put in the work yoursel"
+    },
+    {
+      "service_id": 5,
+      "title": "Diet Program",
+      "img": "https://i.ibb.co/wh7t3N3/555.jpg",
+      "fee": 700,
+      "description": "set of scheduled meals in order to achieve different metabolic and health goals, such as weight loss, sugar control, muscle gain.A healthy diet is essential for good health and nutrition. It protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet"
+    },
+    {
+      "service_id": 6,
+      "title": "Consultation",
+      "img": "https://i.ibb.co/KzCG8qr/8888.jpg",
+      "fee": 100,
+      "description": "A consultation is a conference or meeting at which opinions are exchanged or advice is prescribed. If one doctor says your severe blueberry allergy is cured, you might want a consultation with another doctor before indulging in the forbidden fruit. he process of discussing something with someone in order to get their advice or opinion about it: He made the decision in consultation with his parents and teachers."
+    }
+  ]
