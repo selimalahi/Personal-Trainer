@@ -1,0 +1,17 @@
+.footer-img{
+    object-fit:cover;
+    border-radius: 50%;
+    display: flex;
+}
+.about{
+    display: flex;
+}
+
+.icon{
+    display: flex;
+    font-size: 20px;
+    
+}
+.icon p{
+    margin-right: 15px;
+}
