@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Home/Services/Services";
 import ServicesCart from "../../Pages/Home/Home/Services/ServicesCart/ServicesCart";
+import Login from "../../Pages/Login/Login";
 
 
   const router = createBrowserRouter([
@@ -16,10 +17,13 @@ import ServicesCart from "../../Pages/Home/Home/Services/ServicesCart/ServicesCa
             loader: () => fetch('http://localhost:5000/services')
             
         },
-
         {
           path:'/all-services',
           element:<Services></Services>
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
         }
 
       ]
