@@ -17,10 +17,10 @@ import ServicesCart from "../../Pages/Home/Home/Services/ServicesCart/ServicesCa
             
         },
 
-        // {
-        //   path:'/all-services',
-        //   element:<Services></Services>
-        // }
+        {
+          path:'/all-services',
+          element:<Services></Services>
+        }
 
       ]
       
