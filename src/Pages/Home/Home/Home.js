@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
+import HealthyTips from "../HealthyTips/HealthyTips";
+import NewsArticle from "../NewsArticle/NewsArticle";
 import "./Home.css";
 
 const Home = () => {
@@ -26,6 +28,8 @@ const Home = () => {
       <div className="grid grid-cols-1 mb-10">
         <Link to='/all-services' ><button className="btn btn-info btn-container w-1/2 ">See-All</button></Link>
       </div>
+      <HealthyTips></HealthyTips>
+      <NewsArticle></NewsArticle>
     </div>
   );
 };
