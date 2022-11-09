@@ -1,17 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../../assets/master-panda logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
+   
+  const { user, logOut } = useContext(AuthContext)
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
   const meniItem = (
     <>
       <li className="font-semibold">
         <Link to="/">Home</Link>
       </li>
-      <li className="font-semibold">
-        <Link to="/login">Login</Link>
+      {
+        user?.uid ?
+        <>
+         <li className="font-semibold">
+        <Link  onClick={handleLogOut}>Logout</Link>
       </li>
+        </>:
+        <>
+         <li className="font-semibold">
+        <Link  to='/login'>Login</Link>
+      </li>
+        </>
+      }
     </>
   );
   return (

@@ -1,11 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { useContext } from 'react';
+import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {  useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+
 const Login = () => {
 
-    const handleLogin = event =>{
-        event.preventDefault();
-    }
+  const [error, setError] = useState('');
+
+  const { providerLogin } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+  
+
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from =location.state?.from?.pathname || '/';
+
+
+  const handelGoogleSignIn = () => {
+      providerLogin(googleProvider)
+          .then(result => {
+              const user = result.user;
+              console.log(user)
+              navigate(from, {replace : true})
+          })
+          .catch(error => console.error(error));
+  }
+
+  const handleSubmit = event => {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      signIn(email, password)
+          .then(result => {
+              const user = result.user;
+              console.log(user);
+              form.reset();
+              setError('');
+              navigate(from, {replace : true})
+
+          })
+          .catch(error => {
+              console.error(error)
+              setError(error.message);
+          })
+  }
+
+ 
  
 
   return (
@@ -13,7 +61,7 @@ const Login = () => {
       <div className="hero-content ">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-4">
           <h1 className="text-5xl text-center font-bold ">Login!</h1>
-          <form onSubmit={handleLogin} className="card-body">
+          <form  onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -46,7 +94,8 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center">
-            ---------or--------
+            ---------or-------- <br />
+            <button onClick={handelGoogleSignIn} className="btn btn-active">Login With Google</button>
           </p>
           <p className="text-center pt-5">
             Dont't Have An Account?
