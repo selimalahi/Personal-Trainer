@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import "./DetailsPage.css";
 
 const DetailsPage = () => {
-  const { title, img, fee, description } = useLoaderData();
+  const { _id,title, img, fee, description } = useLoaderData();
   return (
     <div>
       <div>
@@ -23,7 +23,7 @@ const DetailsPage = () => {
       </div>
       <div className="mt-10 mb-10">
         
-        <Link><button className="btn btn-active btn-accent">Add Review</button></Link>
+        <Link to={`/addreview/${_id}`}><button className="btn btn-active btn-accent">Add Review</button></Link>
       </div>
     </div>
   );
