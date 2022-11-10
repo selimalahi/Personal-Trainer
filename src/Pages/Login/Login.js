@@ -6,6 +6,7 @@ import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {  useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
@@ -58,6 +59,10 @@ const Login = () => {
 
   return (
     <div className="hero w-full my-20">
+      
+      <Helmet>           
+           <title>login page</title>          
+       </Helmet>
       <div className="hero-content ">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-4">
           <h1 className="text-5xl text-center font-bold ">Login!</h1>

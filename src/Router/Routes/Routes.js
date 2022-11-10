@@ -7,6 +7,7 @@ import DetailsPage from "../../Pages/DetailsPage/DetailsPage";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
+import MyReview from "../../Pages/MyReview/MyReview";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -51,6 +52,10 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
           element:<Blog></Blog>
 
         },
+        {
+          path:'/myreviews',
+          element:<MyReview></MyReview>
+        }
         
 
       ]

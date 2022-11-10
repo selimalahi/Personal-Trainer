@@ -6,11 +6,16 @@ import HealthyTips from "../HealthyTips/HealthyTips";
 import NewsArticle from "../NewsArticle/NewsArticle";
 import 'react-photo-view/dist/react-photo-view.css';
 import "./Home.css";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const services = useLoaderData();
   return (
     <div>
+      
+      <Helmet>           
+           <title>home page</title>          
+       </Helmet>
       <Banner></Banner>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 pt-10 pb-12">
         {services.map((service) => (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import AllReview from "../AllReview/AllReview";
 import "./DetailsPage.css";
+import { Helmet } from "react-helmet";
 
 const DetailsPage = () => {
   const { _id,title, img, fee, description } = useLoaderData();
@@ -16,6 +17,10 @@ const DetailsPage = () => {
 
   return (
     <div>
+      
+      <Helmet>           
+           <title>details page</title>          
+       </Helmet>
       <div>
         <div className="card w-full h-94 bg-base-100 shadow-xl">
           <figure>

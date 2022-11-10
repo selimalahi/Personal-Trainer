@@ -3,10 +3,13 @@ import "./Footer.css";
 import logo from "../../../assets/master-panda logo.png";
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
     <footer className="footer p-10 bg-black text-white">
       <div>
+      
+
         {/* <img className=" h-20 w-20 footer-img" src={logo} alt="" /> */}
         <div className="about">
           <img className=" h-10 w-10 footer-img" src={logo} alt="" />

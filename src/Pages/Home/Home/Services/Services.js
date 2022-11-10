@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ServicesCart from "./ServicesCart/ServicesCart";
 import Banner from './../../Banner/Banner';
+import { Helmet } from "react-helmet";
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -12,6 +13,9 @@ const Services = () => {
   }, []);
   return (
     <div>
+       <Helmet>           
+           <title>AddReview</title>          
+       </Helmet>
         <div>
         <Banner></Banner>
       </div>

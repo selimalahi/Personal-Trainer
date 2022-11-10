@@ -4,6 +4,7 @@ import img from "../../../assets/master-panda logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
 
+
 const Header = () => {
    
   const { user, logOut } = useContext(AuthContext)
@@ -28,7 +29,7 @@ const Header = () => {
         user?.uid ?
         <>
          <li className="font-semibold">
-         <Link>My reviews</Link>
+         <Link to='/myreviews'>My reviews</Link>
         <Link>Add service</Link>
         <Link  onClick={handleLogOut}>Logout</Link>
       </li>
@@ -47,6 +48,7 @@ const Header = () => {
   );
   return (
     <div>
+    
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">

@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
     <div className="card w-full bg-base-100 shadow-xl mt-20 mb-20">
+       <Helmet>           
+           <title>blog page</title>          
+       </Helmet>
       <div className="card-body">
         <h2 className="text-yellow-600">
           Q-1) What are Difference between SQL and NoSQL?
