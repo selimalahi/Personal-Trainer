@@ -1,7 +1,7 @@
 import React, { useEffect, useState, serviceid } from "react";
 
-const MyReviewRow = ({ myreview }) => {
-  const { serviceName, fee, message, email } = myreview;
+const MyReviewRow = ({ myreview, handelDelete}) => {
+  const {_id, serviceName, fee, message, email } = myreview;
 
   const [reviewService, setReviewServices] = useState({});
 
@@ -14,7 +14,7 @@ const MyReviewRow = ({ myreview }) => {
     <tr>
       <th>
         <label>
-          <button className="btn btn-ghost">X</button>
+          <button  onClick={() => handelDelete(_id)} className="btn btn-ghost">X</button>
         </label>
       </th>
       <td>
