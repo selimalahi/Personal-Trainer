@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AddReview from "../../Pages/AddReview/AddReview";
+import AllReview from "../../Pages/AllReview/AllReview";
 import Blog from "../../Pages/Blog/Blog";
 import DetailsPage from "../../Pages/DetailsPage/DetailsPage";
 import Home from "../../Pages/Home/Home/Home";
@@ -49,6 +50,10 @@ import SignUp from "../../Pages/SignUp/SignUp";
           path:'/blog',
           element:<Blog></Blog>
 
+        },
+        {
+          path:'/allreviews',
+          element:<AllReview></AllReview>
         }
 
       ]

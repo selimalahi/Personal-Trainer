@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "../../../Banner/Banner";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import 'react-photo-view/dist/react-photo-view.css';
 
