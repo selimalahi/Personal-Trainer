@@ -6,9 +6,9 @@ import Blog from "../../Pages/Blog/Blog";
 import DetailsPage from "../../Pages/DetailsPage/DetailsPage";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Home/Services/Services";
-import ServicesCart from "../../Pages/Home/Home/Services/ServicesCart/ServicesCart";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -42,7 +42,7 @@ import SignUp from "../../Pages/SignUp/SignUp";
         },
         {
           path: '/addreview/:id',
-          element:<AddReview></AddReview>,
+          element:<PrivateRoute><AddReview></AddReview></PrivateRoute>,
           loader: ({params}) => fetch(`https://assignment-11-server-site-sigma.vercel.app/addreview/${params.id}`)
 
         },
@@ -51,10 +51,7 @@ import SignUp from "../../Pages/SignUp/SignUp";
           element:<Blog></Blog>
 
         },
-        {
-          path:'/allreviews',
-          element:<AllReview></AllReview>
-        }
+        
 
       ]
       

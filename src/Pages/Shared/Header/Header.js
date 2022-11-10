@@ -28,13 +28,18 @@ const Header = () => {
         user?.uid ?
         <>
          <li className="font-semibold">
+         
         <Link  onClick={handleLogOut}>Logout</Link>
       </li>
+      
         </>:
         <>
+         
          <li className="font-semibold">
         <Link  to='/login'>Login</Link>
       </li>
+     
+         
         </>
       }
     </>
