@@ -1,4 +1,5 @@
 import React, { useEffect, useState, serviceid } from "react";
+import { Link } from "react-router-dom";
 
 const MyReviewRow = ({ myreview, handelDelete}) => {
   const {_id, serviceName, fee, message, email } = myreview;
@@ -46,6 +47,9 @@ const MyReviewRow = ({ myreview, handelDelete}) => {
       <th>
         <span className="badge badge-ghost badge-sm">{email}</span>
       </th>
+      <th>
+          <Link to='/update'><button className="btn btn-ghost btn-xs">details</button></Link>
+        </th>
     </tr>
   );
 };

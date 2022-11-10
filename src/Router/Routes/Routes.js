@@ -9,6 +9,7 @@ import Services from "../../Pages/Home/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import MyReview from "../../Pages/MyReview/MyReview";
 import SignUp from "../../Pages/SignUp/SignUp";
+import UpdatePage from "../../Pages/UpdatePage/UpdatePage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -54,7 +55,11 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         },
         {
           path:'/myreviews',
-          element:<MyReview></MyReview>
+          element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
+        },
+        {
+          path:'/update',
+          element:<UpdatePage></UpdatePage>
         }
         
 

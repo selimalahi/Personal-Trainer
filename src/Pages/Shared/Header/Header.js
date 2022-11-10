@@ -78,13 +78,12 @@ const Header = () => {
           <Link className="btn btn-ghost normal-case text-xl">
             <img className="h-10 w-10 header-img" src={img} alt="" />
           </Link>
+          <h2 className="text-2xl text-orange-400">personal Trainer</h2>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{meniItem}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Get started</a>
-        </div>
+        
       </div>
     </div>
   );
