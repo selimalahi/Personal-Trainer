@@ -27,7 +27,7 @@ const AddReview = () => {
             
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://assignment-11-server-site-sigma.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const AddReview = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
-                    alert('Order placed successfully')
+                    alert('review added successfully')
                     form.reset();
                     
                 }
@@ -59,7 +59,7 @@ const AddReview = () => {
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Message" required></textarea>
 
-                <input className='btn' type="submit" value="Place Your Order" />
+                <input className='btn' type="submit" value="Submit" />
             </form>
         </div>
     );

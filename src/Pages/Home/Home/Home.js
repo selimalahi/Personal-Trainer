@@ -1,8 +1,10 @@
 import React from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import HealthyTips from "../HealthyTips/HealthyTips";
 import NewsArticle from "../NewsArticle/NewsArticle";
+import 'react-photo-view/dist/react-photo-view.css';
 import "./Home.css";
 
 const Home = () => {
@@ -13,13 +15,19 @@ const Home = () => {
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 pt-10 pb-12">
         {services.map((service) => (
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
-          <figure> <img src={service.img} alt=""></img></figure>
+          <figure>
+            <PhotoProvider>
+              <PhotoView src={service.img}>
+              <img src={service.img} alt=""></img>
+              </PhotoView>
+            </PhotoProvider>
+          </figure>
           <div className="card-body">
             <h2 className="card-title">{service.title}</h2>
             <h2 className="card-title">Services Fee : {service.fee}</h2>
             <p> {service.description.slice(0, 100)}.....</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-info">Details</button>
+              <Link><button className="btn btn-info">Details</button></Link>
             </div>
           </div>
         </div>

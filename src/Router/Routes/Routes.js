@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AddReview from "../../Pages/AddReview/AddReview";
+import Blog from "../../Pages/Blog/Blog";
 import DetailsPage from "../../Pages/DetailsPage/DetailsPage";
 import Home from "../../Pages/Home/Home/Home";
 import Services from "../../Pages/Home/Home/Services/Services";
@@ -17,7 +18,7 @@ import SignUp from "../../Pages/SignUp/SignUp";
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/services')
+            loader: () => fetch('https://assignment-11-server-site-sigma.vercel.app/services')
             
         },
         {
@@ -35,13 +36,18 @@ import SignUp from "../../Pages/SignUp/SignUp";
         {
           path: '/details/:id',
           element:<DetailsPage></DetailsPage>,
-          loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-site-sigma.vercel.app/details/${params.id}`)
 
         },
         {
           path: '/addreview/:id',
           element:<AddReview></AddReview>,
-          loader: ({params}) => fetch(`http://localhost:5000/addreview/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-site-sigma.vercel.app/addreview/${params.id}`)
+
+        },
+        {
+          path:'/blog',
+          element:<Blog></Blog>
 
         }
 
