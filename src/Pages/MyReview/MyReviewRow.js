@@ -1,4 +1,4 @@
-import React, { useEffect, useState, serviceid } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const MyReviewRow = ({ myreview, handelDelete}) => {
@@ -7,7 +7,7 @@ const MyReviewRow = ({ myreview, handelDelete}) => {
   const [reviewService, setReviewServices] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-services/${serviceid}`)
+    fetch(`https://assignment-11-server-site-sigma.vercel.app/all-services/${_id}`)
       .then((res) => res.json())
       .then((data) => setReviewServices(data));
   }, []);
@@ -48,7 +48,7 @@ const MyReviewRow = ({ myreview, handelDelete}) => {
         <span className="badge badge-ghost badge-sm">{email}</span>
       </th>
       <th>
-          <Link to='/update'><button className="btn btn-ghost btn-xs">details</button></Link>
+          <Link  to={`/update/${_id}`}><button className="btn btn-ghost btn-xs">update</button></Link>
         </th>
     </tr>
   );

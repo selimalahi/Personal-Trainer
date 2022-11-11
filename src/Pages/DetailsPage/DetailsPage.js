@@ -8,12 +8,12 @@ const DetailsPage = () => {
   const { _id,title, img, fee, description } = useLoaderData();
 
   const [reviews, setReviwes] = useState([]);
-
+  
     useEffect(() => {
-      fetch(`http://localhost:5000/allreviews/${_id}`)
+      fetch(`http://localhost:5000/single-service-reviews/${_id}`)
       .then((res) => res.json())
       .then((data) => setReviwes(data))
-    }, []);
+    },[]);
 
   return (
     <div>
@@ -37,14 +37,14 @@ const DetailsPage = () => {
         </div>
       </div>
       <div className="mt-10 mb-10">
+        
 
-        {
+      {
           reviews.map(review =><AllReview
           key={review._id}
           review={review}
           ></AllReview>)
         }
-
         
         <Link to={`/addreview/${_id}`}><button className="btn btn-active btn-accent">Add Review</button></Link>
       </div>

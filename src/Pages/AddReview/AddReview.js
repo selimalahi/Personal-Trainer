@@ -28,10 +28,11 @@ const AddReview = () => {
             email,
 
             message,
+            date:new Date()
 
         }
 
-        fetch('https://assignment-11-server-site-sigma.vercel.app/reviews', {
+        fetch('http://localhost:5000/add-reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -69,7 +70,7 @@ const AddReview = () => {
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Message" required></textarea>
 
-                <input className='btn' type="submit" value="Submit" />
+                <input className='btn mb-5 mt-5' type="submit" value="Submit" />
             </form>
         </div>
     );

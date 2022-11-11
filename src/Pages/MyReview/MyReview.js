@@ -3,43 +3,45 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import MyReviewRow from "./MyReviewRow";
 
 const MyReview = () => {
-  const { user,logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [myreviews, setMyreviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+    fetch(`http://localhost:5000/myreviews/?email=${user?.email}`, {
       headers: {
-          authorization: `Bearer ${localStorage.getItem('local-token')}`
-      }
-  }) 
-  .then(res => {
-    if (res.status === 401 || res.status === 403) {
-        return logOut();
+        authorization: `Bearer ${localStorage.getItem("local-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
+      .then((data) => setMyreviews(data));
+  }, [user?.email, logOut]);
+
+  console.log(myreviews.length);
+
+  const handelDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure, you want to cancel this order"
+    );
+    if (proceed) {
+      fetch(`http://localhost:5000/myreviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+            const remaining = myreviews.filter((odr) => odr._id !== id);
+            setMyreviews(remaining);
+          }
+        });
     }
-    return res.json();
-})
-.then(data => setMyreviews(data))
-}, [user?.email, logOut])
-
-
-
-  const  handelDelete = id =>{
-    const proceed = window.confirm('Are you sure, you want to cancel this order');
-    if(proceed){
-        fetch(`http://localhost:5000/myreviews/${id}`, {
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.deletedCount > 0){
-                alert('deleted successfully');
-                const remaining = myreviews.filter(odr => odr._id !== id);
-                setMyreviews(remaining);
-            }
-        })
-    }
-}
+  };
   return (
     <div>
       <h2>myreviews : {myreviews.length}</h2>
@@ -60,27 +62,27 @@ const MyReview = () => {
             </tr>
           </thead>
           <tbody>
-             {
-                myreviews.length>0 ? 
-                <>
-                 {
-                myreviews.map(myreview => <MyReviewRow
-                key={myreview._id}
-                myreview={myreview}
-                handelDelete={handelDelete}
-                ></MyReviewRow>)
-              }
-                </>:
-                <> 
-               <div>
-               <h2 className="text-3xl text-center w-full mt-5 mb-5"> Reviews were not added</h2>
-               </div>
-                </>
-             }
-            
+            {myreviews.length > 0 ? (
+              <>
+                {myreviews.map((myreview) => (
+                  <MyReviewRow
+                    key={myreview._id}
+                    myreview={myreview}
+                    handelDelete={handelDelete}
+                  ></MyReviewRow>
+                ))}
+              </>
+            ) : (
+              <>
+                <div>
+                  <h2 className="text-3xl text-center w-full mt-5 mb-5">
+                    {" "}
+                    Reviews were not added
+                  </h2>
+                </div>
+              </>
+            )}
           </tbody>
-
-         
         </table>
       </div>
     </div>

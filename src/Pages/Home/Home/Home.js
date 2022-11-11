@@ -30,9 +30,9 @@ const Home = () => {
           <div className="card-body">
             <h2 className="card-title">{service.title}</h2>
             <h2 className="card-title">Services Fee : {service.fee}</h2>
-            <p> {service.description.slice(0, 100)}.....</p>
+            <p> {service.description.slice(0, 100)}</p>
             <div className="card-actions justify-end">
-              <Link><button className="btn btn-info">Details</button></Link>
+              <Link to={`/details/${service._id}`}><button className="btn btn-info">Details</button></Link>
             </div>
           </div>
         </div>

@@ -6,6 +6,8 @@ import { Helmet } from "react-helmet";
 
 const ServicesCart = ({ service }) => {
   const { _id, img, title, fee, description } = service;
+  // const limit = 100;
+  // console.log(typeof (description))
   return (
     <div>
        <Helmet>           
@@ -16,7 +18,7 @@ const ServicesCart = ({ service }) => {
           <figure>
           <PhotoProvider>
               <PhotoView src={img}>
-              <img src={img} alt=""></img>
+              <img src={img} alt="" style={{height:'300px',objectFit:'cover'}}></img>
               </PhotoView>
             </PhotoProvider>
             
@@ -24,7 +26,7 @@ const ServicesCart = ({ service }) => {
           <div className="card-body ">
             <h2 className="card-title">{title}</h2>
             <h2 className="card-title">Services Fee : {fee}</h2>
-            <p> {description.slice(0, 100)}.....</p>
+            <p>{description.slice(0, 100)}</p>
             <div className="card-actions justify-end">
               <Link to={`/details/${_id}`}>
                 <button className="btn btn-info">Details</button>

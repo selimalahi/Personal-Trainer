@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useContext } from 'react';
-import {  GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {  GoogleAuthProvider } from 'firebase/auth';
 import {  useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
@@ -21,7 +21,7 @@ const Login = () => {
 
   const location = useLocation();
 
-  const from =location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || '/';
 
 
   const handelGoogleSignIn = () => {
@@ -40,14 +40,14 @@ const Login = () => {
                 headers:{
                   'content-type': 'application/json'
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(currentUser)
               })
               .then(res => res.json())
               .then(data => {
                 console.log(data);
 
                 localStorage.setItem('local-token', data.token)
-                navigate(from, {replace : true})
+                navigate(from, { replace: true });
               })
 
 
@@ -73,12 +73,12 @@ const Login = () => {
               console.log(currentUser)
               
               // get jwt token
-              fetch('http://localhost:5000/jwt', {
+              fetch('https://assignment-11-server-site-sigma.vercel.app/jwt', {
                 method:'POST',
                 headers:{
                   'content-type': 'application/json'
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(currentUser)
               })
               .then(res => res.json())
               .then(data => {
