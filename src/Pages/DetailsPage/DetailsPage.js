@@ -10,9 +10,9 @@ const DetailsPage = () => {
   const [reviews, setReviwes] = useState([]);
   
     useEffect(() => {
-      fetch(`http://localhost:5000/single-service-reviews/${_id}`)
+      fetch(`https://assignment-11-server-site-selimalahi.vercel.app/single-service-reviews/${_id}`)
       .then((res) => res.json())
-      .then((data) => setReviwes(data))
+      .then((data) => setReviwes(data))        
     },[]);
 
   return (

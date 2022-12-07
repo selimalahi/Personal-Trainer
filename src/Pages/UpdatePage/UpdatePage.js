@@ -13,7 +13,7 @@ const UpdatePage = () => {
   const hanldeUpdate = (event) => {
     event.preventDefault();
     
-    fetch(`http://localhost:5000/updatereview/${_id}`, {
+    fetch(`https://assignment-11-server-site-selimalahi.vercel.app/updatereview/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",   

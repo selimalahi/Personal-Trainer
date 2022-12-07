@@ -32,7 +32,7 @@ const AddReview = () => {
 
         }
 
-        fetch('http://localhost:5000/add-reviews', {
+        fetch('https://assignment-11-server-site-selimalahi.vercel.app/add-reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

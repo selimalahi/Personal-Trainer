@@ -61,7 +61,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
           path:'/update/:id',
           element:<PrivateRoute><UpdatePage></UpdatePage>,</PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/updatereviews/${params.id}`)
+          loader:({params})=>fetch(`https://assignment-11-server-site-selimalahi.vercel.app/updatereviews/${params.id}`)
 
         },
         {

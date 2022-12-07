@@ -23,7 +23,7 @@ const Addservice = () => {
             price:price,
             description:description
         }
-        fetch('http://localhost:5000/all-services',{
+        fetch('https://assignment-11-server-site-selimalahi.vercel.app/all-services',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

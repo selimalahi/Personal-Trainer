@@ -7,7 +7,7 @@ const MyReview = () => {
   const [myreviews, setMyreviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreviews/?email=${user?.email}`, {
+    fetch(`https://assignment-11-server-site-selimalahi.vercel.app/myreviews/?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("local-token")}`,
       },
@@ -28,7 +28,7 @@ const MyReview = () => {
       "Are you sure, you want to cancel this order"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/myreviews/${id}`, {
+      fetch(`https://assignment-11-server-site-selimalahi.vercel.app/myreviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
